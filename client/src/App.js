@@ -8,8 +8,7 @@ import { useQuery } from 'react-query';
 import { QUERY_KEYS } from './hooks/constants';
 
 import Layout from './components/Layout/Layout.style';
-import { TodoList, TodoItem } from './components/Todo';
-import Input from './components/CreateTodo/Input';
+import { TodoList, TodoItem, TodoCreate } from './components/Todo';
 
 const App = () => {
   const { data, isError, error, isLoading } = useQuery(QUERY_KEYS.todos, () =>
@@ -23,7 +22,7 @@ const App = () => {
 
   return (
     <Layout>
-      <Input
+      <TodoCreate
         title='Create a todo item'
         buttonText='Create'
         onCreate={createTodo}
